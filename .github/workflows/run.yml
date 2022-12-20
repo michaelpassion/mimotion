@@ -3,7 +3,7 @@ name: brush Step count
 on:
   workflow_dispatch:
   schedule:
-   - cron: 18 4,16,21 * * *
+   - cron: 18 0,5,10,14 * * *
 
 jobs:
   setup:

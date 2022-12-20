@@ -87,8 +87,20 @@ def main(_user, _passwd, _step):
         return "user and passwd not empty！"
 
     if _step == '':
-        print("已设置为随机步数（10000-19999）")
-        _step = str(random.randint(10000, 19999))
+        # print("已设置为随机步数（10000-19999）")
+        # _step = str(random.randint(10000, 19999))
+
+        #每天分几次刷新步数
+
+        hour = time.localtime().tm_hour+8
+        if hour == 8:
+            _step = str(random.randint(1500,2000))
+        elif hour == 13:
+            _step = str(random.randint(4000,6000))
+        elif hour == 18:
+            _step = str(random.randint(8000,10000))
+        elif hour == 22:
+            _step = str(random.randint(12000,15000))
     login_token, userid = login(_user, password)
     if login_token == 0:
         print("登陆失败！")
