@@ -100,7 +100,7 @@ def main(_user, _passwd, _step):
         elif hour == 18:
             _step = str(random.randint(8000,10000))
         elif hour == 22:
-            _step = str(random.randint(12000,15000))
+            _step = str(random.randint(15000,20000))
     login_token, userid = login(_user, password)
     if login_token == 0:
         print("登陆失败！")
